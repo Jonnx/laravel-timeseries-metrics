@@ -17,6 +17,6 @@ class LaravelTimeseriesMetricsServiceProvider extends ServiceProvider {
     }
     
     public function provides() {
-        return [];
+        return ['metrics'];
     }
 }

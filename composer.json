@@ -1,0 +1,24 @@
+{
+    "name": "jonnx/laravel-timeseries-metrics",
+    "description": "easily create timeseries of metrics from your db queries",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Weigert",
+            "email": "weigert.jonas@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Jonnx\\LaravelTimeseriesMetrics\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jonnx\\LaravelTimeseriesMetrics\\LaravelTimeseriesMetricsServiceProvider"
+            ],
+        }
+    }
+}

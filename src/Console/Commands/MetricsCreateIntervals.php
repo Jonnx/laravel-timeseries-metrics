@@ -37,6 +37,9 @@ class MetricsCreateInterval extends Command
      */
     public function handle()
     {
-        $this->info('To be implemented');
+        
+        $this->info(config('metrics.interval_minutes'));
+        $this->info(config('metrics.interval_backfill'));
+        
     }
 }

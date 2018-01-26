@@ -3,13 +3,17 @@
 namespace Jonnx\LaravelTimeseriesMetrics;
 
 use Illuminate\Support\ServiceProvider;
+use Jonnx\LaravelTimeseriesMetrics\Console\Commands\MetricsInterval;
 
 class LaravelTimeseriesMetricsServiceProvider extends ServiceProvider {
     
 	public function boot() {
-		$this->publishes([
-			__DIR__.'/../config/metrics.php' => config_path('metrics.php'),
-		], 'metrics');
+		$this->publishes([__DIR__.'/../config/metrics.php' => config_path('metrics.php')], 'config');
+		$this->publishes([__DIR__.'/../database/migrations/' => database_path('migrations')], 'migrations');
+		
+		if ($this->app->runningInConsole()) {
+            $this->commands([MetricsInterval::class]);
+        }
 	}
 	
     public function register() {

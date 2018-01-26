@@ -3,7 +3,7 @@
 namespace Jonnx\LaravelTimeseriesMetrics;
 
 use Illuminate\Support\ServiceProvider;
-use Jonnx\LaravelTimeseriesMetrics\Console\Commands\MetricsInterval;
+use Jonnx\LaravelTimeseriesMetrics\Console\Commands\MetricsCreateInterval;
 
 class LaravelTimeseriesMetricsServiceProvider extends ServiceProvider {
     

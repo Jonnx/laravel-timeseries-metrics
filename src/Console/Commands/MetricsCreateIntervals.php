@@ -4,7 +4,7 @@ namespace Jonnx\LaravelTimeseriesMetrics\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class MetricsCreateIntervals extends Command
+class MetricsCreateInterval extends Command
 {
     /**
      * The name and signature of the console command.

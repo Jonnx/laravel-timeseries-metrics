@@ -12,7 +12,7 @@ class LaravelTimeseriesMetricsServiceProvider extends ServiceProvider {
 		$this->publishes([__DIR__.'/../database/migrations/' => database_path('migrations')], 'migrations');
 		
 		if ($this->app->runningInConsole()) {
-            $this->commands([MetricsInterval::class]);
+            $this->commands([MetricsCreateInterval::class]);
         }
 	}
 	

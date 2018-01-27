@@ -13,7 +13,7 @@ class CreateMetricsIntervalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('metrics_intervals', function (Blueprint $table) {
+        Schema::create('metric_intervals', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamp('timestamp');
             $table->timestamps();

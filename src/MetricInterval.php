@@ -4,7 +4,7 @@ namespace Jonnx\LaravelTimeseriesMetrics;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MetricsInterval extends Model
+class MetricInterval extends Model
 {
     
     public $dates = [

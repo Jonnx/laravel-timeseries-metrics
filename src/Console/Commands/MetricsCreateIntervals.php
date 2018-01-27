@@ -2,7 +2,9 @@
 
 namespace Jonnx\LaravelTimeseriesMetrics\Console\Commands;
 
+use Jonnx\LaravelTimeseriesMetrics\MetricsInterval;
 use Illuminate\Console\Command;
+use Carbon\Carbon;
 
 class MetricsCreateInterval extends Command
 {
@@ -37,9 +39,27 @@ class MetricsCreateInterval extends Command
      */
     public function handle()
     {
+        // GET CURRENT TIMESTAMP
+        $timestamp = Carbon::today();
+        $limit = new Carbon(config('metrics.interval_backfill'));
         
-        $this->info(config('metrics.interval_minutes'));
-        $this->info(config('metrics.interval_backfill'));
+        $generated_count = 0;
+        while(is_null($this->getMetricIntervalFromTimestamp($timestamp)) && $timestamp->gte($limit)) {
+
+            $metricInterval = new MetricsInterval;
+            $metricInterval->timestamp = $timestamp;
+            $metricInterval->save();
+            
+            $generated_count ++;
+            $timestamp = $timestamp->copy()->subHours(24);
+            
+        }
         
+        $this->info("Generated {$generated_count} interval records");
+    }
+    
+    protected function getMetricIntervalFromTimestamp(Carbon $timestamp)
+    {
+        return  MetricInterval::where('timestamp', $timestamp->toDateString())->first();
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMetricsIntervalsTable extends Migration
+class CreateMetricIntervalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -29,6 +29,6 @@ class CreateMetricsIntervalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metrics_intervals');
+        Schema::dropIfExists('metric_intervals');
     }
 }

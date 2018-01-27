@@ -2,7 +2,7 @@
 
 namespace Jonnx\LaravelTimeseriesMetrics\Console\Commands;
 
-use Jonnx\LaravelTimeseriesMetrics\MetricsInterval;
+use Jonnx\LaravelTimeseriesMetrics\MetricInterval;
 use Illuminate\Console\Command;
 use Carbon\Carbon;
 

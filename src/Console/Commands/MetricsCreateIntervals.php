@@ -46,7 +46,7 @@ class MetricsCreateInterval extends Command
         $generated_count = 0;
         while(is_null($this->getMetricIntervalFromTimestamp($timestamp)) && $timestamp->gte($limit)) {
 
-            $metricInterval = new MetricsInterval;
+            $metricInterval = new MetricInterval;
             $metricInterval->timestamp = $timestamp;
             $metricInterval->save();
             

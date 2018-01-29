@@ -1,8 +1,23 @@
 # Larvel Timeseries Metrics
 
-A simple package to generate a base table of timestamps daily to simplify the creating and maintaining of timeseries metrics and usage graphs over time.
+A simple package to generate a base table of timestamps daily to simplify the creating and maintaining of timeseries metrics and usage graphs over time. The base table should be maintained automatically which is the entire purpose of this package. The generated table will look as follows:
 
-The base table should be maintained automatically which is the entire purpose of this package. 
+```
+mysql> select * from metric_intervals;
++----+---------------------+---------------------+---------------------+
+| id | timestamp           | created_at          | updated_at          |
++----+---------------------+---------------------+---------------------+
+|  1 | 2018-01-29 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  2 | 2018-01-28 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  3 | 2018-01-27 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  4 | 2018-01-26 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  5 | 2018-01-25 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  6 | 2018-01-24 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  7 | 2018-01-23 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
+|  8 | 2018-01-22 00:00:00 | 2018-01-29 15:44:33 | 2018-01-29 15:44:33 |
++----+---------------------+---------------------+---------------------+
+8 rows in set (0.00 sec)
+```
 
 ## Getting Started
 
